@@ -58,10 +58,10 @@
 			default:
 				break;
 		}
-		fetchData(constructUrl()); // fetch new page data here
+		fetchData(constructUrl($searchStore)); // fetch new page data here
 	}
 
-	onMount(() => fetchData(constructUrl()));
+	onMount(() => fetchData(constructUrl($searchStore)));
 	$: {
 		fetchData(constructUrl($searchStore));
 	}
