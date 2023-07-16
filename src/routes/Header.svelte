@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { searchStore } from "./store";
+
 	function handleSubmit(e:Event){
 		if (e && e.target){
 			e.preventDefault();
 			const form = e.target as HTMLFormElement;
-			console.log(form.search.value);
+			searchStore.set(form.search.value);
+			console.log("header",form.search.value);
 		}
 	}
 </script>

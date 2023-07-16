@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { onMount} from "svelte";
 	import Card from "./Card.svelte";
+	import { searchStore } from "./store";
 
 	type moviesObject = {
 		adult: boolean,
@@ -61,6 +62,9 @@
 	}
 
 	onMount(() => fetchData(constructUrl()));
+	$: {
+		fetchData(constructUrl($searchStore));
+	}
 </script>
 
 <svelte:head>
