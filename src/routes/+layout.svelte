@@ -4,9 +4,11 @@
 </script>
 
 <div class="app">
+	<!-- gotta get the search value on submit -->
 	<Header />
 
 	<main>
+		<!-- we will have to send the value here to re render the page  -->
 		<slot />
 	</main>
 
